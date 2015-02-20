@@ -1,6 +1,6 @@
 # Pure Ruby HTML Generator
 
-## What?
+## Just verifying connection to GH
 
 Part of my [UT on Rails course](http://schneems.com/ut-rails). Use pure ruby and standard libraries to perform a few basic functions to generate useful html pages using as little code as possible.
 
