@@ -1,18 +1,45 @@
 <% def link_to(name, url)
-  return "<a href='#{url}'>#{name}</a>}"
+  return "<a href='#{url}'>#{name}</a>"
   end
 %>
 
 <html>
   <body>
     <h1>You're using a layout</h1>
+    <%= @request.query.inspect %>
+
+      <% if @request.query['first_name'] && !@request.query['first_name'].empty? %>
+        Hey there <%= @request.query['first.name'] %>
+      <% else %>
+        Enter your name
+      <% end %>
     <p>
       <h3> I'm a header</h3>
       <p>Put things in the header</p>
       <%= link_to("Find me on LinkedIn","http://www.linkedin.com/in/tcampbelltx") %>
+      <br>
+      <br>
+     <form method="post" action="<%= @request.path %>">
+
+      First name: <input type="text" name="first_name" placeholder="Put your name here.."> 
+      
+      <br>
+      <br>
+      Male <input type="radio" name="sex" value="male" checked> 
+      <br>
+      <br>
+      Female <input type="radio" name="sex" value="female">
+      <br>
+      <br>
+      <input type="submit" value="Click to Submit">
+
+
+
+     </form> 
 
     </p>
     <hr />
+    <!-- Yield to dynamic content that will be served based on user input -->
     <div>
       <%= yield %>
     </div>
